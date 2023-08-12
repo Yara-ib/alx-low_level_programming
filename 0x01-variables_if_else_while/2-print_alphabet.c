@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i;
-	char x;
+	char x = 'a';
 
 	for (i = 0; i <= 26; ++i)
 	{
