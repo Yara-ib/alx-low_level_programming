@@ -8,16 +8,22 @@
 
 int main(void)
 {
-	int i;
+	int i = 0;
 
-	while (i < 9)
+	while (i < 10)
 	{
 		putchar('0' + i);
+		++i;
+
+		if (i == 10)
+		{
+			break;
+		}
 		putchar(',');
 		putchar(' ');
-		++i;
+
 	}
-	putchar('0' + 9);
+	putchar('\n');
 	return (0);
 }
 
