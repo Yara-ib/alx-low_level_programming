@@ -11,7 +11,7 @@ int main(void)
 	int i;
 	char x;
 
-	for (i = 0, i <= 26, i++)
+	for (i = 0; i <= 26; ++i)
 	{
 		putchar("%c\n", x);
 	}
