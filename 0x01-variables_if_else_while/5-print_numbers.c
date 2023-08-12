@@ -8,13 +8,13 @@
 
 int main(void)
 {
-	char x[24] = "abcdfghijklmnoprstuvwxyz";
-	int i;
+	int x;
 
-	for (i = 0; i <= 24; i++)
+	for (x = 0; x <= 10; x++)
 	{
-		putchar(x[i]);
+		putchar(x);
 	}
+	putchar('\n');
 	return (0);
 }
 
