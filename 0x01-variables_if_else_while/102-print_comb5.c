@@ -8,30 +8,27 @@
 
 int main(void)
 {
-	int i, x, y, z;
+	int i, x, y, z, m, n;
 
-	for (i = 0; i < 10; ++i)
+	for (i = 0; i < 100; ++i)
 	{
-
-		for (x = 0; x < 9; ++x)
+		m = i / 10;
+		n = i % 10;
+		for (x = i + 1; x < 100; ++x)
 		{
-			for (y = 0; y < 10; ++y)
+			y = x / 10;
+			z = x % 10;
+			putchar('0' + m);
+			putchar('0' + n);
+			putchar(' ');
+			putchar('0' + y);
+			putchar('0' + z);
+			if (m == 9 && n == 8 && y == 9 && z == 9)
 			{
-				for (z = 0; z < 10; ++z)
-				{
-					if ((i * x) == (y * z))
-					{
-						continue;
-					}
-						putchar('0' + i);
-						putchar('0' + x);
-						putchar(' ');
-						putchar('0' + y);
-						putchar('0' + z);
-						putchar(',');
-						putchar(' ');
-				}
+				break;
 			}
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
