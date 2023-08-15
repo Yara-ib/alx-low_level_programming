@@ -8,9 +8,9 @@
  * Return: Always 0 (Success)
  */
 
-int _islower(int c)
+int _islower(c)
 {
-	int c;
+	char c;
 
 	if (_islower(c))
 	{
