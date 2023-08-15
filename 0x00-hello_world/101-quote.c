@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+
 /**
  * main - Entry point
  *
@@ -6,10 +9,7 @@
  */
 int main(void)
 {
-if (x=int)
-	printf("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 	return (1);
-else
-	return (0);
 }
 
