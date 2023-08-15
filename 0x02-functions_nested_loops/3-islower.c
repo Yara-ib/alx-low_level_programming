@@ -10,7 +10,7 @@
 
 int _islower(int c)
 {
-	char c;
+	int c;
 
 	if (_islower(c))
 	{
