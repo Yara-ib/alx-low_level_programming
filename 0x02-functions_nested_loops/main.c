@@ -8,13 +8,6 @@
 
 int main(void)
 {
-	int i;
-	ch[]='_putchar';
-	for (i = 0; i < 9; ++i)
-	{
-		_putchar(ch[i]);
-	}
-	_putchar('\n');
+	print_alphabet()
 	return (0);
 }
-
