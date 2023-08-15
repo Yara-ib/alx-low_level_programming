@@ -18,7 +18,7 @@ int _abs(int x)
 	}
 	else
 	{
-	_putchar('0' + x);
+	printf("%d\n", x);
 	}
 	return (0);
 }
