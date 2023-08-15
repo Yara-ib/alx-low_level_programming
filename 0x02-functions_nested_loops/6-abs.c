@@ -14,7 +14,7 @@ int _abs(int)
 
 if (x < 0)
 {
-	_putchar('0' + (x * -1);
+	_putchar('0' + (x * -1));
 }
 else
 {
