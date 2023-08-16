@@ -11,7 +11,7 @@
 int print_last_digit(int x)
 {
 	int last_digit;
-	int m = –2147483648;
+	int m = 2147483648;
 	int n = 2147483647;
 
 	if (x < 0)
@@ -23,7 +23,7 @@ int print_last_digit(int x)
 	{
 		last_digit = x % 100;
 	}
-	else if (x == m)
+	else if (x == -m)
 	{
 		last_digit = 8;
 	}
