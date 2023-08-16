@@ -11,6 +11,8 @@
 int print_last_digit(int x)
 {
 	int last_digit;
+	int INT_MIN = –2147483648;
+	int INT_MAX = 2147483647;
 
 	if (x < 0)
 	{
