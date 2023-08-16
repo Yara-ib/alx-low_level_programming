@@ -21,7 +21,11 @@ int print_last_digit(int x)
 	{
 		last_digit = x % 100;
 	}
-	else if (x == INT_MIN || x == INT_MAX)
+	else if (x == INT_MIN)
+	{
+		last_digit = 8;
+	}
+	else if (x == INT_MAX)
 	{
 		last_digit = 7;
 	}
