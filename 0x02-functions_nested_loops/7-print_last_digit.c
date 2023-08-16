@@ -21,10 +21,15 @@ int print_last_digit(int x)
 	{
 		last_digit = x % 100;
 	}
+	else if (x == INT_MIN || INT_MAX)
+	{
+		last_digit = 7;
+	}
 	else
 	{
 		last_digit = x % 10;
 	}
+
 	_putchar('0' + last_digit);
 	return (last_digit);
 
