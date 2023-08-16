@@ -10,15 +10,20 @@
 
 int print_last_digit(int x)
 {
-	int last_digit = x % 10;
+	int last_digit;
 
 	if (x < 0)
 	{
 		x = x * (-1);
+		last_digit = x % 10;
 	}
 	else if (x > 99)
 	{
-		x = x % 100;
+		last_digit = x % 100;
+	}
+	else
+	{
+		last_digit = x % 10;
 	}
 	_putchar('0' + last_digit);
 	return (last_digit);
