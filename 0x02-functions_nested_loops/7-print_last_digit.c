@@ -10,23 +10,19 @@
 
 int print_last_digit(int x)
 {
-	int last_digit;
+	int i;
 
-	if (last_digit < 0)
+	if (x < 0)
 	{
-		last_digit = x * (-1);
-		last_digit = x % 10;
+		x = x * (-1);
+		i = x % 10;
 	}
-	else if (last_digit < 99)
+	else if (i < 0)
 	{
-		last_digit = x % 100;
-	}
-	else
-	{
-		last_digit = x % 10;
+		i = i * (-1);
 	}
 
-	_putchar('0' + last_digit);
-	return (last_digit);
+	_putchar('0' + i);
+	return (i);
 
 }
