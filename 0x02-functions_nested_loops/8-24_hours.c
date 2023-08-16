@@ -14,7 +14,7 @@ void jack_bauer(void)
 	{
 		m = i / 10;
 		n = i % 10;
-		for (x = i + 1; x < 60; ++x)
+		for (x = 0; x < 60; ++x)
 		{
 			y = x / 10;
 			z = x % 10;
