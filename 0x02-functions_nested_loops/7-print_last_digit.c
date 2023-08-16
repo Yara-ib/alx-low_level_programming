@@ -11,25 +11,15 @@
 int print_last_digit(int x)
 {
 	int last_digit;
-	int m = 2147483648;
-	int n = 2147483647;
 
-	if (x < 0)
+	if (last_digit < 0)
 	{
-		x = x * (-1);
+		last_digit = x * (-1);
 		last_digit = x % 10;
 	}
-	else if (x > 99)
+	else if (last_digit < 99)
 	{
 		last_digit = x % 100;
-	}
-	else if (x == -m)
-	{
-		last_digit = 8;
-	}
-	else if (x == n)
-	{
-		last_digit = 7;
 	}
 	else
 	{
