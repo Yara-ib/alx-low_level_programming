@@ -17,5 +17,6 @@ int print_last_digit(int x)
 		x = x * (-1);
 	}
 	return (last_digit);
+	return (last_digit);
 
 }
