@@ -16,6 +16,10 @@ int print_last_digit(int x)
 	{
 		x = x * (-1);
 	}
+	else if (x > 99)
+	{
+		x = x % 100;
+	}
 	_putchar('0' + last_digit);
 	return (last_digit);
 
