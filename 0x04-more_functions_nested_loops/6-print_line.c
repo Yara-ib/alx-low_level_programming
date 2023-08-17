@@ -10,18 +10,14 @@
 
 void print_line(int n)
 {
-	int x, i;
+	int i;
 
-	for (i = 0; i < 10; ++i)
+	for (i = 0; i < n; ++i)
 	{
-		for (x = 0; x < 15; ++x)
+		if (n > 0)
 		{
-			if (x > 9)
-			{
-				_putchar(x / 10 + '0');
-			}
-			_putchar(x % 10 + '0');
+			_putchar(95);
 		}
-		_putchar('\n');
 	}
+	_putchar('\n');
 }
