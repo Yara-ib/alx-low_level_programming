@@ -26,13 +26,12 @@ int main(void)
 			{
 				printf("Buzz");
 			}
-			else
+			else if (x != 100)
 			{
 				printf("Buzz ");
 			}
 		}
-		}
-		else
+		else if (x % 3 == 1 || x % 5 == 1)
 		{
 			printf("%d ", x);
 		}
