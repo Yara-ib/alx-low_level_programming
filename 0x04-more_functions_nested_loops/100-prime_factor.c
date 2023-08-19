@@ -9,31 +9,24 @@
 
 int main(void)
 {
-	int x, n, l;
-	l = n % x;
+	long int n, largest;
+	long int x = 612852475143;
 
-	for (x = 2; x <= n; x++)
+	while (x != 0)
 	{
-		if (l == 0)
+		if (x % n != 0)
 		{
-			printf("%d", l);
-			for 
-		}
-		else if (x % 3 == 0)
-		{
-			printf("Fizz ");
-		}
-		else if (x == 100)
-		{
-			printf("Buzz");
-		}
-		else if (x % 5 == 0)
-		{
-			printf("Buzz ");
+			n = n + 1;
 		}
 		else
 		{
-			printf("%d ", x);
+			largest = x;
+			x = x / n;
+			if (x == 1)
+			{
+				printf("%ld", largest);
+				break;
+			}
 		}
 	}
 	printf("\n");
