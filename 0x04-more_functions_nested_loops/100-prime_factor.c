@@ -12,24 +12,19 @@ int main(void)
 	long int n, largest;
 	long int x = 612852475143;
 
-	while (x != 0)
+	for (n = 2; n <= x; ++n)
 	{
-		if (x % n != 0)
+		while (x % n == 0)
 		{
-			n = n + 1;
-		}
-		else
-		{
-			largest = x;
-			x = x / n;
-			if (x == 1)
+			if (n > 0)
 			{
-				printf("%ld", largest);
-				break;
+				largest = n;
 			}
+			x = x / n;
 		}
 	}
-	printf("\n");
+	printf("%ld\n", largest);
 
 	return (0);
 }
+
