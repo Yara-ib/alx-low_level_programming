@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * puts_half - Entry point
@@ -10,23 +11,20 @@
 
 void puts_half(char *str)
 {
-	int x = 0, len = 0, n;
+	int len = strlen(str);
+	int n = (len - 1) / 2;
+	int x = 0;
 
-	while (str[x++])
+	if (len % 2 == 0)
 	{
-		len++;
-	}
-	if ((len % 2) == 0)
-	{
-		n = len / 2;
+		for (x = n + 1; str[x] != '\0'; x++)
+		{
+			_putchar(str[x]);
+		}
 	}
 	else
 	{
-		n = (len + 1) / 2;
-
-		for (x = n; x < len; x++)
-		{
-			_putchar('\n');
-		}
+		_putchar(str[n]);
 	}
+	_putchar('\n');
 }
