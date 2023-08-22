@@ -1,20 +1,26 @@
 #include "main.h"
 
 /**
- * _puts - Entry point
+ * rev_string - Entry point
  *
- * @str: Parameter for _puts()
+ * @s: Parameter for rev_string()
  *
  * Return: Always 0 (Success)
  */
 
-void _puts(char *str)
+void rev_string(char *s)
 {
 	int x = 0;
 
-	if (*s != '\0')
+	while (s[x] != '\0')
 	{
-		rev_string(s + 1);
+		x++;
+	}
+	x--;
+	while (x > -1)
+	{
+		_putchar(s[x]);
+		x--;
 	}
 	_putchar('\n');
 }
