@@ -5,28 +5,28 @@
 /**
  * cap_string - Entry point
  *
- * @str: Parameter for cap_string()
+ * @n: Parameter for cap_string()
  *
  * Return: Always 0 (Success)
  */
 
-char *cap_string(char *str)
+char *cap_string(char *n)
 {
-	int length = strlen(str);
+	int length = strlen(n);
 	int i;
 
-	str[0] = toupper(str[0]);
+	n[0] = toupper(n[0]);
 	for (i = 1; i < length; i++)
 	{
 
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-			str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-			str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-			str[i] == '}')
+		if (n[i] == ' ' || n[i] == '\t' || n[i] == '\n' ||
+			n[i] == ',' || n[i] == ';' || n[i] == '.' ||
+			n[i] == '!' || n[i] == '?' || n[i] == '"' ||
+			n[i] == '(' || n[i] == ')' || n[i] == '{' ||
+			n[i] == '}')
 			{
-				str[i + 1] = toupper(str[i + 1]);
+				n[i + 1] = toupper(n[i + 1]);
 			}
 	}
-	return (str);
+	return (n);
 }
