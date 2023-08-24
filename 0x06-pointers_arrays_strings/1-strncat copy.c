@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _strncat - Entry point
@@ -12,14 +13,13 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int len, x;
+	int len = strlen(dest);
+	int i;
 
-for (len = 0; dest[len] != '\0'; ++len)
-	;
-
-	for (x = 0; x < n && src[x] != '\0'; ++x)
-	{
-		dest[len + x] = src[x];
-	}
-	return (dest);
+for (i = 0 ; i < n && src[i] != '\0' ; i++)
+{
+	dest[len + i] = src[i];
+}
+dest[len + i] = '\0';
+return (dest);
 }
