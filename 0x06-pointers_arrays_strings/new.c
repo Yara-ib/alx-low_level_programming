@@ -91,3 +91,48 @@ char *_strcat(char *dest, char *src)
 		dest[i] = '\0';
 		return (dest);
 }
+
+
+***
+
+#include "main.h"
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * _strncpy - Entry point_strncpy
+ *
+ * @dest: Parameter for _strncpy()
+ * @src: Parameter for _strncpy()
+ * @n: Parameter for _strncpy()
+ *
+ * Return: Always 0 (Success)
+ */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	int len;
+	int x = 0;
+
+for (len = 0; len < n && src[len] != '\0'; ++len)
+{
+
+	dest[x] = src[n -len];
+}
+
+return (dest);
+}
+
+****
+
+int len =0;
+	int x = 0;
+for (len = 0; src[len] != '\0'; ++len)
+	;
+
+for (n = 0; n < len && src[len] != '\0'; ++n)
+{
+dest[x] = src[n];
+}
+return (dest);
+}
