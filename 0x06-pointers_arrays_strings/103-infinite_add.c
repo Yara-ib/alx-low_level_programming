@@ -8,45 +8,54 @@
  * @r: Parameter for infinite_add()
  * Return: Always 0 (Success)
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
-{
-	int r = n = index = 0, x, z, s, new, i, L1 = strlen(n1), L2 = strlen(n2);
 
-	while (L1 > 0 || L2 > 0)
-	{
-		x = (L1 > 0) ? (n1[L1 - 1] - '0') : 0;
-		z = (L2 > 0) ? (n2[L2 - 1] - '0') : 0;
-		s = x + z + r;
-		if (s > 9)
-		{
-			r = 1, s -= 10;
+char *infinite_add(char *n1, char *n2, char *r, int size_r) {
+	int len1 = strlen(n1);
+	int len2 = strlen(n2);
+	int i = 0;
+	int carry = 0;
+	int index = 0;
+
+	while (len1 > 0 || len2 > 0) {
+		int digit1 = (len1 > 0) ? (n1[len1 - 1] - '0') : 0;
+		int digit2 = (len2 > 0) ? (n2[len2 - 1] - '0') : 0;
+
+		int sum = digit1 + digit2 + carry;
+
+		if (sum > 9) {
+			carry = 1;
+			sum -= 10;
+		} else {
+			carry = 0;
 		}
-		else
-		{
-			r = 0;
+
+		if (index >= size_r) {
+			return 0;
 		}
-		if (index >= size_r)
-		{
-			return (0);
-		}
-		r[index] = s + '0';
-		index++, L1--, L2--;
+
+		r[index] = sum + '0';
+
+		index++;
+		len1--;
+		len2--;
 	}
-	if (r == 1 && index < size_r)
-	{
+
+	if (carry == 1 && index < size_r) {
 		r[index] = '1';
 		index++;
 	}
-	if (index >= size_r)
-	{
-		return (0);
+	if (index >= size_r) {
+		return 0;
 	}
 	r[index] = '\0';
-	for (i = 0; i < n / 2; ++i)
-	{
-		new = r[i];
-		r[i] = r[(n - 1) - i];
-		r[(n - 1) - i] = new;
+
+	int j = index - 1;
+	while (i < j) {
+		char temp = r[i];
+		r[i] = r[j];
+		r[j] = temp;
+		i++;
+		j--;
 	}
-	return (r);
+	return r;
 }
