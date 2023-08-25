@@ -2,18 +2,17 @@
 #include <string.h>
 
 /**
- * _strncat - Entry point
+ * print_buffer - Entry point
  *
- * @dest: Parameter for _strncat()
- * @src: Parameter for _strncat()
- * @n: Parameter for _strncat()
+ * @b: Parameter for print_buffer()
+ * @size: Parameter for print_buffer()
  *
  * Return: Always 0 (Success)
  */
 
-char *_strncat(char *dest, char *src, int n)
+void print_buffer(char *b, int size)
 {
-	int len = strlen(dest);
+	size_r = strlen(dest);
 	int i;
 
 for (i = 0 ; i < n && src[i] != '\0' ; i++)
