@@ -3,28 +3,28 @@
 /**
  * leet - Entry point
  *
- * @char: Parameter for leet()
+ * @n: Parameter for leet()
  *
  * Return: Always 0 (Success)
  */
 
-char *leet(char *)
+char *leet(char *n)
 {
-	int length = strlen(n);
-	int i;
+	int i = 0;
+	int l;
+	char z[10] = "4307143071";
+	char x[10] = "AEOTLaeotl";
 
-	n[0] = toupper(n[0]);
-	for (i = 1; i < length; i++)
+	while ((n[i] != '\0'))
 	{
-
-		if (n[i] == ' ' || n[i] == '\t' || n[i] == '\n' ||
-		n[i] == ',' || n[i] == ';' || n[i] == '.' ||
-		n[i] == '!' || n[i] == '?' || n[i] == '"' ||
-		n[i] == '(' || n[i] == ')' || n[i] == '{' ||
-		n[i] == '}')
+		for (l = 0; l < 10; ++l)
 		{
-			n[i + 1] = toupper(n[i + 1]);
+			if (n[i] == x[l])
+			{
+				n[i] = z[l];
+			}
 		}
+		i++;
 	}
 	return (n);
 }
