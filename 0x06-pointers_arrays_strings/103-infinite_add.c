@@ -1,61 +1,50 @@
 #include "main.h"
-#include <string.h>
+
 /**
- * infinite_add - Entry point
- * @n1: Parameter for infinite_add()
- * @n2: Parameter for infinite_add()
- * @size_r: Parameter for infinite_add()
- * @r: Parameter for infinite_add()
- * Return: Always 0 (Success)
+ * infinite_add - adds two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: buffer for result
+ * @size_r: buffer size
+ *
+ * Return: address of r or 0
  */
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
+{
+	int i, j, k, l, m, n;
 
-char *infinite_add(char *n1, char *n2, char *r, int size_r) {
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
-	int i = 0;
-	int carry = 0;
-	int index = 0;
+	for (i = 0; n1[i]; i++)
+	;
+	for (j = 0; n2[j]; j++)
+	;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
 
-	while (len1 > 0 || len2 > 0) {
-		int digit1 = (len1 > 0) ? (n1[len1 - 1] - '0') : 0;
-		int digit2 = (len2 > 0) ? (n2[len2 - 1] - '0') : 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	{
+		n = m;
 
-		int sum = digit1 + digit2 + carry;
-
-		if (sum > 9) {
-			carry = 1;
-			sum -= 10;
-		} else {
-			carry = 0;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
 		}
-
-		if (index >= size_r) {
-			return 0;
-		}
-
-		r[index] = sum + '0';
-
-		index++;
-		len1--;
-		len2--;
+		m = n / 10;
+		r[k] = n % 10 + '0';
 	}
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
 
-	if (carry == 1 && index < size_r) {
-		r[index] = '1';
-		index++;
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
 	}
-	if (index >= size_r) {
-		return 0;
-	}
-	r[index] = '\0';
-
-	int j = index - 1;
-	while (i < j) {
-		char temp = r[i];
-		r[i] = r[j];
-		r[j] = temp;
-		i++;
-		j--;
-	}
-	return r;
+	return (r);
 }
