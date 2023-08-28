@@ -1,4 +1,0 @@
-intt
-
-
-kdokpo
