@@ -1,38 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-/**
- * print_fib - Another Entry - another Function
- * @n: Parameter for print_fib
- * Return: Always (0) (success)
- */
-
-void print_fib(int n)
-{
-	int i, unsigned long fib[50];
-
-	if (n <= 0)
-	{
-		return;
-	}
-
-	fib[0] = 1;
-	fib[1] = 2;
-
-	for (i = 2; i < n; i++)
-	{
-		fib[i] = fib[i - 1] + fib[i - 2];
-	}
-
-	for (i = 0; i < n; i++)
-	{
-		printf("%d", fib[i]);
-		if (i != n - 1)
-		{
-			printf(", ");
-		}
-	}
-	printf("\n");
-}
 
 /**
  * main - Entry point
@@ -41,6 +8,23 @@ void print_fib(int n)
 
 int main(void)
 {
-	print_fib(50);
+	long int y, x, z, m;
+
+	x = 1, z = 2;
+
+	for (y = 1; y <= 50; ++y)
+	{
+		if (x != 20365011074)
+		{
+			printf("%ld, ", x);
+		}
+		else
+		{
+			printf("%ld\n", x);
+		}
+		m = x + z;
+		x = z;
+		z = m;
+	}
 	return (0);
 }
