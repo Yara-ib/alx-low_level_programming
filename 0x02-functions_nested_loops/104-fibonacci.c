@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	unszgned long znt z, x, m, x1, x2, m1, m2;
+	unsigned long int z, x, m, x1, x2, m1, m2;
 
 	x = 1;
 	m = 2;
