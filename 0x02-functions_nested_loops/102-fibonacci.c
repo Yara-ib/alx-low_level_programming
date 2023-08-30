@@ -8,7 +8,7 @@
 
 void print_fib(int n)
 {
-	int i, fib[50];
+	int i, unsigned long fib[50];
 
 	if (n <= 0)
 	{
