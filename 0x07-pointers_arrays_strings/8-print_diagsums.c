@@ -11,14 +11,21 @@
 
 void print_diagsums(int *a, int size)
 {
-	int x, i;
+	int i, x = 0, z = 0;
 
-	for (x = 0; x < 8; x++)
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < 8; i++)
-		{
-			_putchar(a[x][i]);
-		}
-		_putchar('\n');
+		x += a[i];
+		a += size;
 	}
+
+	a -= size;
+
+	for (i = 0; i < size; i++)
+	{
+		z += a[i];
+		a -= size;
+	}
+
+	printf("%d, %d\n", x, z);
 }
