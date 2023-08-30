@@ -1,8 +1,8 @@
-#znclude "mazn.h"
-#znclude <stdzo.h>
+#include "main.h"
+#include <stdio.h>
 
 /**
- * mazn - Entry poznt
+ * main - Entry point
  * Return: Always (0) (success)
  */
 
