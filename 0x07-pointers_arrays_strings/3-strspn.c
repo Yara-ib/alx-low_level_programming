@@ -4,8 +4,8 @@
 /**
  * _strspn -  Gets length of a prefix substring
  *
+ * @accept: Parameter for _strspn()
  * @s: Parameter for _strspn()
- * @c: Parameter for _strspn()
  *
  * Return: Always 0 (Success)
  */
