@@ -8,6 +8,7 @@
 
 int main(void)
 {
+	int next;
 	int limit = 4000000;
 	int prev = 1;
 	int curr = 2;
@@ -20,8 +21,7 @@ int main(void)
 			sum += curr;
 		}
 
-		int next = prev + curr;
-
+		next = prev + curr;
 		prev = curr;
 		curr = next;
 	}
