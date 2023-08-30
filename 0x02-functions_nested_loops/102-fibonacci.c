@@ -8,14 +8,13 @@
 
 void print_fib(int n)
 {
-	int i, fib;
+	int i, fib[50];
 
 	if (n <= 0)
 	{
 		return;
 	}
 
-	fib[50];
 	fib[0] = 1;
 	fib[1] = 2;
 
