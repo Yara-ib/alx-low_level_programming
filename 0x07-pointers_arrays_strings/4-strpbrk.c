@@ -4,8 +4,8 @@
 /**
  * _strpbrk -  Searches a string for any of a set of bytes
  *
+ * @accept: Parameter for _strpbrk()
  * @s: Parameter for _strpbrk()
- * @c: Parameter for _strpbrk()
  *
  * Return: Always 0 (Success)
  */
@@ -14,12 +14,16 @@ char *_strpbrk(char *s, char *accept)
 {
 	int i;
 
-	for (i = 0; s[i] >= '\0'; i++)
+	while (*s)
 	{
-		if (s[i] == c)
+		for (i = 0; accept[i]; i++)
 		{
-			return (s + i);
+			if (*s == accept[i])
+				return (s);
 		}
+
+		s++;
 	}
+
 	return ('\0');
 }
