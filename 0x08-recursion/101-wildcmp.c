@@ -1,19 +1,20 @@
 #include "main.h"
 
 int _strlen_recursion(char *s);
-int is_palindrome_helper(char *s, int start, int end);
+int wildcmp_helper(char *s1, char *s2, int start);
 
 /**
-* is_palindrome - Returns string is a palindrome or not.
-* @s: char as a parameter for the function.
-* Return: is_palindrome.
+* wildcmp - Compares two strings.
+* @s1: char as a parameter for the function.
+* @s2: char as a parameter for the function.
+* Return: wildcmp.
 */
 
-int is_palindrome(char *s)
+int wildcmp(char *s1, char *s2)
 {
-	int length = _strlen_recursion(s);
+	int start = 0;
 
-	return (is_palindrome_helper(s, 0, length - 1));
+	return (wildcmp_helper(s1, s2, start + 1));
 }
 
 /**
@@ -35,22 +36,22 @@ int _strlen_recursion(char *s)
 }
 
 /**
-* is_palindrome_helper - Returns the length of a string.
-* @s: char as a parameter for the function.
+* wildcmp_helper - Returns the length of a string.
+* @s1: char as a parameter for the function.
+* @s2: char as a parameter for the function.
 * @start: int as a parameter for the function.
-* @end: int as a parameter for the function.
-* Return: Always (is_palindrome_helper)
+* Return: Always (wildcmp_helper)
 */
 
-int is_palindrome_helper(char *s, int start, int end)
+int wildcmp_helper(char *s1, char *s2, int start)
 {
-	if (start >= end)
+	if (s1[start] == s2[start])
 	{
 		return (1);
 	}
-	if (s[start] != s[end])
+	if (s1[start] != s2[start])
 	{
 		return (0);
 	}
-	return (is_palindrome_helper(s, start + 1, end - 1));
+	return (wildcmp_helper(s1, s2, start + 1));
 }
