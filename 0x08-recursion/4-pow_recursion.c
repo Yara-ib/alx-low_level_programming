@@ -2,8 +2,8 @@
 
 /**
 * _pow_recursion - Returns the factorial of a given number.
-* @x: char as a parameter for the function.
-* @y: char as a parameter for the function.
+* @x: int as a parameter for the function.
+* @y: int as a parameter for the function.
 * Return: _pow_recursion.
 */
 
