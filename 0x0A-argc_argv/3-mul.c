@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <string.h>
+#include <stdlib.h>
 /**
 * main - Entry point.
 * @argc: Count for arguments.
@@ -9,21 +10,19 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
-	argc = 2;
-	int x = atoi(argv[0] * argv[1]);
+	int i = 0;
+	int x, z, m;
 
-	if (argc < 2)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (argc = 2)
-	{
 
-	}
-	else
+	x = atoi(argv[i + 1]);
+	z = atoi(argv[i + 2]);
+	m = x * z;
 
-
+	printf("%d\n", m);
 	return (0);
 }
