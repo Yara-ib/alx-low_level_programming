@@ -9,6 +9,21 @@
 
 int main(int argc, char *argv[])
 {
-	printf("%d\n", (argc - 1));
+	int i;
+	argc = 2;
+	int x = atoi(argv[0] * argv[1]);
+
+	if (argc < 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	else if (argc = 2)
+	{
+
+	}
+	else
+
+
 	return (0);
 }
