@@ -3,7 +3,7 @@
 int _sqrt_helper(int n, int result);
 
 /**
-* _sqrt_recursion - Returns the factorial of a given number.
+* _sqrt_recursion - Returns square root for n.
 * @n: int as a parameter for the function.
 * Return: _sqrt_recursion.
 */
