@@ -22,13 +22,21 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] < '0' || *argv[i] > '9')
+			char *x = argv[i];
+			int n;
+
+			for (n = 0; x[n] != '\0'; n++)
 			{
-				return (printf("Error\n"), 1);
+				if (x[n] < '0' || x[n] > '9')
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			sum += atoi(argv[i]);
+			sum += atoi(x);
 		}
 		printf("%d\n", sum);
 	}
+
 	return (0);
 }
