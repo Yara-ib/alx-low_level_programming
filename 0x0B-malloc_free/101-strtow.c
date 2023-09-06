@@ -43,9 +43,9 @@ int count_words(char *str)
 }
 
 /**
- * strtow - concatenates all the arguments of your program.
+ * strtow - splits a string into words.
  * @str: char.
- * Return: pointer to a new string, or NULL if it fails.
+ * Return: pointer to an array of strings (words).
 */
 
 char **strtow(char *str)

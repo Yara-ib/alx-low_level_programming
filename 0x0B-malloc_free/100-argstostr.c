@@ -3,9 +3,9 @@
 #include <string.h>
 
 /**
- * argstostr - concatenates all the arguments of your program.
- * @ac: int.
- * @av: char.
+ * argstostr - concatenates all the arguments of your program in new string.
+ * @ac: arguments counts.
+ * @av: pointer to arguments values passed.
  * Return: pointer to a new string, or NULL if it fails.
 */
 

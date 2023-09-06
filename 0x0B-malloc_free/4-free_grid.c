@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * free_grid - returns a pointer 2 dimensional array of integers.
- * @height: height of the s.
- * @grid: width of the s.
- * Return: pointer to a 2 dimensional array of integers.
+ * free_grid - frees a 2 dimensional grid previously created.
+ * @height: height of the grid.
+ * @grid: grid to be freed.
+ * Return: nothing.
 */
 
 void free_grid(int **grid, int height)
