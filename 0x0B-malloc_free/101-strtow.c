@@ -22,6 +22,7 @@ int is_space(char c)
 int count_words(char *str)
 {
 	int count, word;
+
 	count = word = 0;
 
 	while (*str != '\0')
@@ -69,7 +70,7 @@ char **strtow(char *str)
 	index = 0;
 	length = 0;
 	word = 0;
-	char *start = NULL;
+	start = NULL;
 
 	while (*str != '\0')
 	{
