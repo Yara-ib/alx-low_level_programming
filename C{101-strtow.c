@@ -50,22 +50,26 @@ int count_words(char *str)
 
 char **strtow(char *str)
 {
-	char **words, *start;
-	int n, x, length, word;
-
-	x = length = word = 0;
+	char **words;
+	char *start;
+	int n, index, length, word, i;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
 	n = count_words(str);
+
 	if (n == 0)
 		return (NULL);
 
 	words = malloc(sizeof(char *) * (n + 1));
+
 	if (words == NULL)
 		return (NULL);
 
+	index = 0;
+	length = 0;
+	word = 0;
 	start = NULL;
 
 	while (*str != '\0')
@@ -75,6 +79,7 @@ char **strtow(char *str)
 			if (!word)
 			{
 				start = str;
+				length = 0;
 				word = 1;
 			}
 			length++;
@@ -83,18 +88,37 @@ char **strtow(char *str)
 		{
 			if (word)
 			{
-				words[x] = strndup(start, length);
-				x++;
-				word = length = 0;
+				words[index] = malloc(sizeof(char) * (length + 1));
+				if (words[index] == NULL)
+				{
+					for (i = 0; i < index; i++)
+						free(words[i]);
+					free(words);
+					return (NULL);
+				}
+				strncpy(words[index], start, length);
+				words[index][length] = '\0';
+				index++;
+				word = 0;
 			}
 		}
 		str++;
 	}
+
 	if (word)
 	{
-		words[x] = strndup(start, length);
-		x++;
+		words[index] = malloc(sizeof(char) * (length + 1));
+		if (words[index] == NULL)
+		{
+			for (i = 0; i <= index; i++)
+				free(words[i]);
+			free(words);
+			return (NULL);
+		}
+		strncpy(words[index], start, length);
+		words[index][length] = '\0';
+		index++;
 	}
-	words[x] = NULL;
+	words[index] = NULL;
 	return (words);
 }
