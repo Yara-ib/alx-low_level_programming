@@ -24,13 +24,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	y = strlen(s2);
 	s = malloc(x + y + 1);
 
-	if (s2 == NULL && s1 == NULL)
+	if (s == NULL)
 		return (NULL);
 
 	for (i = 0; s1[i] != '\0'; i++)
-	{
 		s[i] = s1[i];
-	}
 
 	if (n >= y)
 	{
