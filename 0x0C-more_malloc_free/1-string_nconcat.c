@@ -3,9 +3,9 @@
 #include <string.h>
 /**
  * string_nconcat - concatenates two strings.
- * @s1: number of elements.
- * @s2: number of elements.
- * @n: number of elements.
+ * @s1: first array.
+ * @s2: second array.
+ * @n: number of elements to be added from second array to first one.
  * Return: pointer to the allocated memory.
 */
 
