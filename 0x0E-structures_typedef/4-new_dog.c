@@ -12,13 +12,9 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *name1, *owner1, *n;
-	float age1;
-
-	if (n == NULL)
+	if (my_dog == NULL)
 		return (NULL);
-	strcpy(new_dog->name, name1);
-	strcpy(new_dog->age, age1);
-	strcpy(new_dog->owner, owner1);
-	return (n);
+	strcpy(new_dog->name, my_dog.name);
+	strcpy(new_dog->owner, my_dog.owner);
+	return (new_dog);
 }
