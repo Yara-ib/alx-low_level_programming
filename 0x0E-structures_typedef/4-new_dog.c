@@ -16,18 +16,18 @@ Return NULL if the function fails*/
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *n_name, *n_owner;
+	char *d;
+	int i, k;
 
-	n_name = malloc(sizeof(dog_t));
+	d = malloc(sizeof(new_dog));
 
-	if (n_name == NULL)
+	if (d == NULL)
 		return (NULL);
 
 	for(i = 0; i < (strlen(name)-1); i++)
-		n_name[i] = name[i];
+		d[i] = name[i];
 	for(k = 0; k < (strlen(name)-1); k++)
-		n_owner[k] = owner[k];
+		d[k] = owner[k];
 
-	return (n_name);
-	free (n_name);
+	return (d);
 }
