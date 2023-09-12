@@ -9,25 +9,42 @@
  * @owner: pointer to owner's name.
  * Return: Nothing.
 */
-/**Write a function that creates a new dog.
-Prototype: dog_t *new_dog(char *name, float age, char *owner);
-You have to store a copy of name and owner
-Return NULL if the function fails*/
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *d;
-	int i, k;
+	dog_t *new_dog;
+	int name_len, owner_len;
 
-	d = malloc(sizeof(new_dog));
-
-	if (d == NULL)
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
 		return (NULL);
 
-	for(i = 0; i < (strlen(name)-1); i++)
-		d[i] = name[i];
-	for(k = 0; k < (strlen(name)-1); k++)
-		d[k] = owner[k];
+	name_len = strlen(name);
+	owner_len = strlen(owner);
 
-	return (d);
+	new_dog->name = malloc((name_len + 1) * sizeof(char));
+
+	if (new_dog->name == NULL)
+	{
+		free(new_dog);
+		return (NULL);
+	}
+
+	new_dog->owner = malloc((owner_len + 1) * sizeof(char));
+
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
+
+	strncpy(new_dog->name, name, name_len);
+	new_dog->name[name_len] = '\0';
+
+	strncpy(new_dog->owner, owner, owner_len);
+	new_dog->owner[owner_len] = '\0';
+
+	new_dog->age = age;
+	return (new_dog);
 }
