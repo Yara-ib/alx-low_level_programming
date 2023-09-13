@@ -2,19 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, int* argv)
+int main(int argc, int* argv[])
 {
 	int calc, num1, operator, num2;
-	char argv1, argv2;
 	int op;
 
-	if (argc != 3)
-		return (NULL);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
 
-	num1 = atoi(argv1);
-	num2 = atoi(argv2);
-
-	if (argc != 3)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
@@ -29,5 +25,6 @@ int main(int argc, int* argv)
 		printf("Error\n");
 		exit(100);
 	}
+
 	return (calc);
 }
