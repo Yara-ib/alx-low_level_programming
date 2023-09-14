@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2;
-	char (*op);
+    char (*op);
 
 	if (argc != 4)
 	{
@@ -30,10 +30,11 @@ int main(int argc, char *argv[])
 	}
 
 	if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
-	{
-		printf("Error\n");
-		return (100);
-	}
-	printf("%d\n",get_op_func(argv[2])(num1, num2));
+    {
+        printf("Error\n");
+        return (100);
+    }
+
+	printf("%d\n", get_op_func(op)(num1, num2));
 	return (0);
 }
