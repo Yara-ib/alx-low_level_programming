@@ -10,7 +10,7 @@
 */
 int main(int argc, int* argv[])
 {
-	int calc, num1, operator, num2;
+	int num1, num2;
 	int op;
 
 	num1 = atoi(argv[1]);
@@ -32,6 +32,6 @@ int main(int argc, int* argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n", get_op_func(num1, num2));
+	printf("%d\n", get_op_func(op)(num1, num2));
 	return (0);
 }
