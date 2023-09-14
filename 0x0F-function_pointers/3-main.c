@@ -21,7 +21,8 @@ int main(int argc, int* argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (op != "+" || op != "-" || op != "*" || op != "/" || op != "%" || op != NULL)
+	if (op != "+" || op != "-" || op != "*" || op != "/"
+		|| op != "%" || op != NULL)
 	{
 		printf("Error\n");
 		exit(99);
@@ -31,6 +32,6 @@ int main(int argc, int* argv[])
 		printf("Error\n");
 		exit(100);
 	}
-
-	return (calc);
+	printf("%d\n", get_op_func(num1, num2));
+	return (0);
 }
