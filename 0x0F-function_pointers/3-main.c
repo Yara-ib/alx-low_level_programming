@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (100);
 	}
-
-	printf("%d\n", get_op_func(op)(num1, num2));
+	printf("%d\n",get_op_func(argv[2])(num1, num2));
 	return (0);
 }
