@@ -1,15 +1,18 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
+
 
 /**
  * get_op_func - sum of a and b.
  * @s: first integer.
  * Return: sum.
 */
+
 int (*get_op_func(char *s))(int, int)
 {
-	  op_t ops[] = {
+	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
@@ -18,12 +21,14 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	int i;
+	int i = 0;
 
 	while (ops[i].op != NULL)
 	{
 		if (*(ops[i].op) == *s)
+			return (ops[i].f);
 		i++;
 	}
-	return (ops[i].f);
+
+	return (NULL);
 }

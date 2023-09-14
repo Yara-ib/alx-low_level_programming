@@ -8,10 +8,12 @@
  * @argv: vector to agruments' array.
  * Return: Always (0) - success.
 */
+
 int main(int argc, char *argv[])
 {
 	int num1, num2;
-	char (*op);
+	char *op;
+	int result;
 
 	if (argc != 4)
 	{
@@ -23,18 +25,20 @@ int main(int argc, char *argv[])
 	op = argv[2];
 	num2 = atoi(argv[3]);
 
-	if (op == NULL || op[1] != '\0')
+	if (op[1] != '\0' || get_op_func(op) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
+	if ((*op == '/' || *op == '%') && num2 == 0)
 	{
 		printf("Error\n");
-		return (100);
+		exit(100);
 	}
 
-	printf("%d\n", get_op_func(op)(num1, num2));
+	result = get_op_func(op)(num1, num2);
+	printf("%d\n", result);
+
 	return (0);
 }
