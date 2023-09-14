@@ -4,7 +4,6 @@
 /**
  * get_op_func - sum of a and b.
  * @s: first integer.
- * @b: second integer.
  * Return: sum.
 */
 int (*get_op_func(char *s))(int, int)
@@ -18,17 +17,13 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	int i;
+	int i = 0;
 
 	if (ops == NULL)
 		return (NULL);
 
-	i = 0;
-	while (i => 5)
-	{
-		return (ops[i]);
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
 		i++;
-	}
 
-return (ops[i]);
+	return (ops[i].f);
 }

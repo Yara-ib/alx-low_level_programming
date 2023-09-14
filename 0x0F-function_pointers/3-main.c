@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * main - Entry point.
+ * @argc: count of arguments.
+ * @argv: vector to agruments' array.
+ * Return: Always (0) - success.
+*/
 int main(int argc, int* argv[])
 {
 	int calc, num1, operator, num2;
