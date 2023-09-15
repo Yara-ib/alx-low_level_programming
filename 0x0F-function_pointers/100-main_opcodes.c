@@ -12,8 +12,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, n;
-	char *x;
+	unsigned int i, n;
+	unsigned char *x;
 
 	if (argc != 2 && argc < 2)
 	{
