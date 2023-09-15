@@ -12,7 +12,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, n = 0;
+	int i, n;
+	char *x;
 
 	n = atoi(argv[1]);
 	if (argc != 2)
@@ -20,12 +21,17 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-		if (*argv[1] < 0)
+		if (n < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	if (argc == 2 && *argv[1] > 0)
-		printf("%.2x\n", n);
+	x = *argv;
+	if (argc == 2)
+	{
+		for (i = 0; i < n; i++)
+			printf("%x ", x[i]);
+	}
+	printf("\n");
 	return (0);
 }
