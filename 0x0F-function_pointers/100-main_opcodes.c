@@ -20,11 +20,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(1);
 	}
-	printf("%.2x\n", n);
-
-	if (*argv[1] < 0)
+		if (*argv[1] < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
+	if (argc == 2 && *argv[1] > 0)
+		printf("%.2x\n", n);
+	return (0);
 }
