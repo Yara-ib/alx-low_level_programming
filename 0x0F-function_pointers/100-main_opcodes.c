@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 	{
 		for (i = 0; i < n; i++)
-			printf("%x ", x[i]);
+			printf("%.2x ", x[i]);
 	}
 	printf("\n");
 	return (0);
