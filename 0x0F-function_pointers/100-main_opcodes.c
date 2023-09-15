@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int i, n;
 	unsigned char *x;
 
-	if (argc != 2 && argc < 2 || n > 2)
+	if (argc != 2 && argc < 2 || argc > 2)
 	{
 		printf("Error\n");
 		exit(1);
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 	x = *argv;
-	if (argc == 2 && n == 2)
+	if (argc == 2)
 	{
 		for (i = 0; i < n; i++)
 			printf("%.2x ", x[i]);
