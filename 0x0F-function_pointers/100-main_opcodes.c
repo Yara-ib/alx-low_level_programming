@@ -15,14 +15,14 @@ int main(int argc, char *argv[])
 	int i, n = 0;
 
 	n = atoi(argv[1]);
-	if (argc == 2)
-		printf("%.2x\n", n);
-	else
+	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	if (argv[1] < 0)
+	printf("%.2x\n", n);
+
+	if (*argv[1] < 0)
 	{
 		printf("Error\n");
 		exit(2);
