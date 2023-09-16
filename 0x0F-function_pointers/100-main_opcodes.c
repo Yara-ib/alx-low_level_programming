@@ -15,24 +15,23 @@ int main(int argc, char *argv[])
 	int i, n;
 	unsigned char *x;
 
-	if (argc != 2 && argc < 2 || argc > 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(1);
+		return 1;
 	}
 
 	n = atoi(argv[1]);
 	if (n < 0)
 	{
 		printf("Error\n");
-		exit(2);
+		return 2;
 	}
+
 	x = (unsigned char *)main;
-	if (argc == 2)
-	{
-		for (i = 0; i < n; i++)
-			printf("%.2x ", x[i]);
-	}
+	for (i = 0; i < n; i++)
+		printf("%.2x ", x[i]);
+
 	printf("\n");
-	return (0);
+	return 0;
 }
