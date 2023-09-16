@@ -30,8 +30,14 @@ int main(int argc, char *argv[])
 	x = *argv;
 	if (argc == 2)
 	{
-		for (i = 0; i < n; i++)
-			printf("%.2x 1", x[i] & 0xff);
+		for (i = 0; i < n - 1; i++)
+		{
+			printf("%.2x ", x[i]);
+			if (i == n)
+			{
+				printf("%.2x", x[i]);
+			}
+		}
 	}
 	printf("\n");
 	return (0);
