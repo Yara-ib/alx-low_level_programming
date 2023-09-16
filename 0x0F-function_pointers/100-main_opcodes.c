@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		for (i = 0; i < n - 1; i++)
 		{
 			printf("%.2x ", x[i]);
-			if (i == n)
+			if (i == (n - 1))
 			{
 				printf("%.2x", x[i]);
 			}
