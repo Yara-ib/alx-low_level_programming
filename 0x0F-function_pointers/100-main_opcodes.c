@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	x = *argv;
+	x = (unsigned char *)main;
 	if (argc == 2)
 	{
 		for (i = 0; i < n; i++)
