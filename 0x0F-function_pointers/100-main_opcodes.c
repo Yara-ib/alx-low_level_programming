@@ -34,10 +34,10 @@ int main(int argc, char *argv[])
 		{
 			if (i == (n - 1))
 			{
-				printf("%02x", x[i]);
+				printf("%02x ", x[i]);
 			}
 			else
-				printf("%02x ", x[i]);
+				printf("%02x", x[i]);
 		}
 	}
 	printf("\n");
