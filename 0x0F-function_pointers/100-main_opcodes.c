@@ -32,12 +32,10 @@ int main(int argc, char *argv[])
 	{
 		for (i = 0; i < n; i++)
 		{
-			if (i == (n - 1))
-			{
-				printf("%02x ", x[i]);
-			}
-			else
-				printf("%02x", x[i]);
+			printf("%02x", x[i]);
+
+			if (i < (n - 1))
+				printf(" ");
 		}
 	}
 	printf("\n");
