@@ -53,12 +53,5 @@ int main(int argc, char *argv[])
 		close(dest_fd);
 		exit(98);
 	}
-
-	if (close(source_fd) == -1 || close(dest_fd) == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", (close(source_fd) == -1) ? source_fd : dest_fd);
-		exit(100);
-	}
-
 	return (0);
 }
