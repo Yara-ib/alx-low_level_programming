@@ -44,11 +44,5 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (close(fd_from) == -1 || close(fd_to) == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n",
-		(close(fd_from) == -1) ? fd_from : fd_to);
-		exit(100);
-	}
 	return (0);
 }
