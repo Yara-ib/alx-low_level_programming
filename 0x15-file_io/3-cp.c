@@ -1,5 +1,4 @@
 #include "main.h"
-
 #define BUFFER_SIZE 1024
 
 /**
@@ -11,7 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-	ssize_t readable, writable, fd_from, fd_to;
+	int fd_from, fd_to;
+	ssize_t readable, writable;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
@@ -32,17 +32,22 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	readable = read(fd_from, buffer, BUFFER_SIZE);
+	if (readable > 0)
+	{
+		writable = write(fd_to, buffer, readable);
+		if (writable != readable)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	}
 	if (readable == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	writable = write(fd_to, buffer, readable);
-	if (writable != readable)
-	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
 
+	close(fd_from);
+	close(fd_to);
 	return (0);
 }
