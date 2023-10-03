@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 	if (fd_to == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		close(fd_from);
 		exit(99);
 	}
 	readable = read(fd_from, buffer, BUFFER_SIZE);
@@ -38,15 +39,16 @@ int main(int argc, char *argv[])
 		if (writable != readable)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			close(fd_to);
 			exit(99);
 		}
 	}
 	if (readable == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		close(fd_from);
 		exit(98);
 	}
-
 	close(fd_from);
 	close(fd_to);
 	return (0);
