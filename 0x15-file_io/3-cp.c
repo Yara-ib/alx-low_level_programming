@@ -33,15 +33,10 @@ int main(int argc, char *argv[])
 		close(fd_from);
 		exit(99);
 	}
-	readable = read(fd_from, buffer, BUFFER_SIZE);
-	if (readable == -1)
+
+	readable = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
-	}
-	writable = write(fd_to, buffer, readable);
+		writable = write(fd_to, buffer, readable);
 		if (writable <= 0)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
@@ -49,5 +44,13 @@ int main(int argc, char *argv[])
 			close(fd_to);
 			exit(99);
 		}
+	}
+
+	if (readable == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		close(fd_from);
+		exit(98);
+	}
 	return (0);
 }
