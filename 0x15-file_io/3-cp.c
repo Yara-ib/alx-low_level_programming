@@ -10,7 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-	ssize_t readable, writable, fd_from, fd_to;
+	int fd_from, fd_to;
+	ssize_t readable, writable;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
@@ -24,28 +25,30 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	readable = read(fd_from, buffer, BUFFER_SIZE);
-	if (readable <= 0)
+	if (readable > 0)
+	{
+		writable = write(fd_to, buffer, readable);
+		if (writable != readable)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	}
+	if (readable == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	writable = write(fd_to, buffer, readable);
-	if (writable <= 0)
+	if (close(fd_from) == -1 || close(fd_to) == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	if (close(fd_from) < 0 || close(fd_to) < 0)
-	{
-		dprintf(2, "Error: Can't close fd %ld\n",
-			(close(fd_from) == -1) ? fd_from : fd_to);
+		dprintf(2, "Error: Can't close fd %d\n", (close(fd_from) == -1) ? fd_from : fd_to);
 		exit(100);
 	}
 	close(fd_from);
