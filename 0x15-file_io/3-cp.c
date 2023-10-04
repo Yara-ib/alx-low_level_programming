@@ -49,6 +49,5 @@ int main(int argc, char *argv[])
 		close(fd_to);
 		exit(98);
 	}
-
 	return (0);
 }
