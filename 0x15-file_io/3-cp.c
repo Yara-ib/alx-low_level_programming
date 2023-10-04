@@ -2,6 +2,22 @@
 #define BUFFER_SIZE 1024
 
 /**
+ * close_fd - checking if closing the file will gets any errors
+ * @fd: file descriptor needed to be checked
+ * Return: 0; sucess
+*/
+
+int close_fd(ssize_t fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		return (100);
+	}
+	return (0);
+}
+
+/**
  * main - Entry point.
  * @argc: arguments count passed on to the program.
  * @argv: vector to arguments passed and saved in a NULL terminated array.
@@ -49,5 +65,7 @@ int main(int argc, char *argv[])
 		close(fd_to);
 		exit(98);
 	}
+	if (close_fd(fd_from) != 0 || close_fd(fd_to) != 0)
+		exit(100);
 	return (0);
 }
