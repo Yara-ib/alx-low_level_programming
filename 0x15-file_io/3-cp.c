@@ -49,7 +49,6 @@ int main(int argc, char *argv[])
 		close(fd_to);
 		exit(98);
 	}
-	if (close_fd(fd_from) != 0 || close_fd(fd_to) != 0)
-		exit(100);
+
 	return (0);
 }
