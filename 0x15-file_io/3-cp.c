@@ -6,6 +6,7 @@
  * @fd: file descriptor needed to be checked
  * Return: 0; sucess
 */
+int main(int argc, char *argv[]);
 
 int close_fd(ssize_t fd)
 {
