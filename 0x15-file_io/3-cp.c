@@ -12,7 +12,7 @@ void closeFile(ssize_t fd, char *argv)
 {
 	if (close(fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %s\n", argv);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", argv);
 		exit(100);
 	}
 }
