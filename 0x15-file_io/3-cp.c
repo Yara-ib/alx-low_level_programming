@@ -2,6 +2,22 @@
 #define BUFFER_SIZE 1024
 
 /**
+ * closeFile - close fds opened.
+ * @fd: file descriptor.
+ * @argv: vector to arguments passed and saved in a NULL terminated array.
+ * Return: nothing.
+*/
+
+void closeFile(ssize_t fd, char *argv)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close %s\n", argv);
+		exit(100);
+	}
+}
+
+/**
  * main - Entry point.
  * @argc: arguments count passed on to the program.
  * @argv: vector to arguments passed and saved in a NULL terminated array.
@@ -28,7 +44,6 @@ int main(int argc, char *argv[])
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(fd_from);
 		exit(99);
 	}
 	while ((readable = read(fd_from, buffer, BUFFER_SIZE)) > 0)
@@ -37,17 +52,15 @@ int main(int argc, char *argv[])
 		if (writable <= 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_from);
-			close(fd_to);
 			exit(99);
 		}
 	}
 	if (readable == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
 		exit(98);
 	}
+	closeFile(fd_from, argv[1]);
+	closeFile(fd_to, argv[2]);
 	return (0);
 }
