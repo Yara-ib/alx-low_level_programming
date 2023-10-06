@@ -1,17 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <elf.h>
+#include "main.h"
 
 /**
  * print_addr - prints address
  * @ptr: magic.
  * Return: no return.
  */
-
 void print_addr(char *ptr)
 {
 	int i;
@@ -48,16 +41,14 @@ void print_addr(char *ptr)
 				printf("%02x", 256 + ptr[i]);
 
 		}
-	}
+																}
 	printf("\n");
 }
-
 /**
  * print_type - prints type
  * @ptr: magic.
  * Return: no return.
  */
-
 void print_type(char *ptr)
 {
 	char type = ptr[16];
@@ -87,7 +78,6 @@ void print_type(char *ptr)
  * @ptr: magic.
  * Return: no return.
  */
-
 void print_osabi(char *ptr)
 {
 	char osabi = ptr[7];
@@ -111,7 +101,6 @@ void print_osabi(char *ptr)
  * @ptr: magic.
  * Return: no return.
  */
-
 void print_version(char *ptr)
 {
 	int version = ptr[6];
@@ -123,13 +112,11 @@ void print_version(char *ptr)
 
 	printf("\n");
 }
-
 /**
  * print_data - prints data
  * @ptr: magic.
  * Return: no return.
  */
-
 void print_data(char *ptr)
 {
 	char data = ptr[5];
@@ -146,7 +133,6 @@ void print_data(char *ptr)
  * @ptr: magic.
  * Return: no return.
  */
-
 void print_magic(char *ptr)
 {
 	int bytes;
@@ -159,13 +145,11 @@ void print_magic(char *ptr)
 	printf("\n");
 
 }
-
 /**
  * check_sys - check the version system.
  * @ptr: magic.
  * Return: no return.
  */
-
 void check_sys(char *ptr)
 {
 	char sys = ptr[4] + '0';
@@ -192,9 +176,8 @@ void check_sys(char *ptr)
 /**
  * check_elf - check if it is an elf file.
  * @ptr: magic.
- * Return: 1 or 0
+ * Return: 1 if it is an elf file. 0 if not.
  */
-
 int check_elf(char *ptr)
 {
 	int addr = (int)ptr[0];
@@ -207,14 +190,12 @@ int check_elf(char *ptr)
 
 	return (0);
 }
-
 /**
- * main - Entry point
+ * main - check the code for Holberton School students.
  * @argc: number of arguments.
  * @argv: arguments vector.
  * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
 	int fd, ret_read;
@@ -248,9 +229,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Err: It is not an ELF\n");
 		exit(98);
 	}
-
 	check_sys(ptr);
 	close(fd);
-
 	return (0);
 }
