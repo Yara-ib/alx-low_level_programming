@@ -20,33 +20,34 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->prev = NULL;
 	new_node->next = NULL;
 
-	/* cheking if head exists! if not, new node will be the head */
 	if (*h == NULL)
 	{
-		(*h) = new_node;
+		*h = new_node;
 		return (new_node);
 	}
-	ptr = (*h);
 
-	while (ptr != NULL && idx != 0)
+	ptr = *h;
+
+	while (idx > 0 && ptr->next != NULL)
 	{
 		ptr = ptr->next;
 		idx--;
 	}
 
-	/* checking if the 1st ptr points to the end of the list or not */
-	if (ptr == NULL)
+	if (idx > 0)
 	{
-		new_node->prev = ptr;
-		ptr->next = new_node;
+		free(new_node);
+		return (NULL);
 	}
-	else
-	{
-		next_ptr = ptr->next;
-		ptr->next = new_node;
+
+	next_ptr = ptr->next;
+
+	if (next_ptr != NULL)
 		next_ptr->prev = new_node;
-		new_node->prev = ptr;
-		new_node->next = next_ptr;
-	}
+
+	new_node->next = next_ptr;
+	new_node->prev = ptr;
+	ptr->next = new_node;
+
 	return (new_node);
 }
