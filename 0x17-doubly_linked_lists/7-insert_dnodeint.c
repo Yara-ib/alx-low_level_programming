@@ -21,13 +21,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->next = NULL;
 
 	/* cheking if head exists! if not, new node will be the head */
-	if (*h != NULL)
-		ptr = (*h);
-	else
+	if (*h == NULL)
 	{
 		(*h) = new_node;
 		return (new_node);
 	}
+	ptr = (*h);
 
 	while (ptr != NULL && idx != 0)
 	{
