@@ -35,6 +35,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		idx--;
 	}
 
+	if (idx > 0)
+		return (NULL);
+
 	/* checking if the 1st ptr points to the end of the list or not */
 	if (ptr == NULL)
 	{
