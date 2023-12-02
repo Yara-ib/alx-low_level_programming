@@ -7,7 +7,7 @@
 */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *h_table;
+	hash_table_t *h_table = NULL;
 	unsigned long int i = 0;
 
 	/* Assigning memory for the Hash Table (overall) */
@@ -21,7 +21,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* Assigning values of hash_table_t's members */
 	h_table->size = size;
 	/* Array; double ptr points to the array & each node to be created.*/
-	h_table->array = malloc(sizeof(hash_node_t) * size) ;
+	h_table->array = malloc(sizeof(hash_node_t) * size);
 	if (h_table->array == NULL)
 	{
 		free(h_table->array);
