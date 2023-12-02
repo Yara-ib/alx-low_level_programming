@@ -18,7 +18,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* Assigning values of hash_table_t's members */
 	h_table->size = size;
 	/* Array; double ptr points to the array & each node to be created.*/
-	h_table->array = malloc(sizeof(hash_node_t) * size);
+	h_table->array = malloc(sizeof(hash_node_t) * size + 1);
 	if (h_table->array == NULL)
 		return (NULL);
 
