@@ -10,19 +10,23 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *h_table;
 	unsigned long int i = 0;
 
-	if (size == 0)
-		return (NULL);
 	/* Assigning memory for the Hash Table (overall) */
 	h_table = malloc(sizeof(hash_table_t));
 	if (h_table == NULL)
+	{
+		free(h_table);
 		return (NULL);
+	}
 
 	/* Assigning values of hash_table_t's members */
 	h_table->size = size;
 	/* Array; double ptr points to the array & each node to be created.*/
 	h_table->array = malloc(sizeof(hash_node_t) * size) ;
 	if (h_table->array == NULL)
+	{
+		free(h_table->array);
 		return (NULL);
+	}
 
 	/* Assigning values for @each of the array indices */
 	for (; i < size; i++)
