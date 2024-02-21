@@ -13,7 +13,6 @@ clean:
 oclean:
 	${RM} *.o
 
-fclean:
-	${RM} *~ *.o ${NAME}
+fclean: clean oclean
 
 re: fclean all
