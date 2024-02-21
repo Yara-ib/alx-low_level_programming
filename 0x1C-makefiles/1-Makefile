@@ -1,5 +1,5 @@
 all: ${SRC}
-	${CC} $< -o school
+	${CC} $^ -o school
 
 CC = gcc
 SRC = main.c school.c
