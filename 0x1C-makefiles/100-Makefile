@@ -8,10 +8,6 @@ AlT_FLAGS = CFLAGS
 FILE = m.h
 RM: ${RMF}
 
-ifneq ($(wildcard $(FILE)),)
-	all
-endif
-
 .PHONY: all clean oclean fclean re
 
 all: ${FILE} ${OBJ}
