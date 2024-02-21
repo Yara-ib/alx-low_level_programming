@@ -15,7 +15,6 @@ all: ${FILE} ${OBJ}
 RM: ${RMF}
 
 clean:
-
 	${RM} *~ ${NAME}
 
 oclean:
