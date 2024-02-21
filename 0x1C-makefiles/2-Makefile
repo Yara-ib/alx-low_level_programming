@@ -14,4 +14,4 @@ ${NAME}: ${OBJ}
 	${CC} -c -o $@ ${SRC}
 
 clean:
-	@rm -f ${OBJ}
+	@rm -f %.o
