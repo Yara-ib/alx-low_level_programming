@@ -5,8 +5,8 @@ NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 AlT_FLAGS = CFLAGS
-
 FILE = m.h
+
 ifeq {${wildcard ${FILE}}, ${FILE}}
 	all
 endif
