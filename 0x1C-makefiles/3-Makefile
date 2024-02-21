@@ -5,7 +5,7 @@ NAME = school
 RM = rm -f
 
 all: ${OBJ}
-	${CC} $^-o ${NAME}
+	${CC} $^ -o ${NAME}
 
 clean:
 	${RM} ${NAME} *~
