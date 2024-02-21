@@ -7,9 +7,9 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 # AlT_FLAGS = CFLAGS
 FILE = m.h
 
-ifneq ($(wildcard ${FILE}),)
-	all
-endif
+# ifneq ($(wildcard ${FILE}),)
+# 	all
+# endif
 
 all: ${FILE} ${OBJ}
 	${CC} $^ -o ${NAME}
