@@ -3,15 +3,5 @@ SRC = main.c school.c
 OBJ = $(SRC:.c = .o)
 NAME = school
 
-all: ${NAME} clean
-
-# gcc main.o school.o -o school
-${NAME}: ${OBJ}
-	${CC} $^ -o $@
-
-# gcc -c -o school.o school.c
-%.o: %.c
-	${CC} -c -o $@ ${SRC}
-
-clean:
-	@rm -f %.o
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
