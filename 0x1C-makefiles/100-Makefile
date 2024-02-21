@@ -9,6 +9,7 @@ AlT_FLAGS = CFLAGS
 FILE = m.h
 ifeq {${wildcard ${FILE}}, ${FILE}}
 	all
+endif
 
 .PHONY: all clean oclean fclean re
 
