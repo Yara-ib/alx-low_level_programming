@@ -16,5 +16,4 @@ oclean:
 fclean:
 	${RM} ${NAME} *.o *~
 
-.PHONY: all
-re: all
+re: oclean all
