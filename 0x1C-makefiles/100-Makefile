@@ -7,10 +7,10 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 AlT_FLAGS = CFLAGS
 FILE = m.h
 
-.PHONY: all clean oclean fclean re
-
 all: ${FILE} ${OBJ}
 	${CC} ${AlT_FLAGS} $^ -o ${NAME}
+
+.PHONY: all clean oclean fclean re
 
 RM: ${RMF}
 
