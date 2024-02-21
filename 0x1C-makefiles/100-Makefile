@@ -14,7 +14,7 @@ endif
 
 .PHONY: all clean oclean fclean re
 
-all: FILE ${OBJ}
+all: ${FILE} ${OBJ}
 	${CC} ${AlT_FLAGS} $^ -o ${NAME}
 
 clean:
