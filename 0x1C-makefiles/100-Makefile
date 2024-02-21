@@ -6,6 +6,10 @@ RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 AlT_FLAGS = CFLAGS
 
+FILE = m.h
+ifeq {${wildcard ${FILE}}, ${FILE}}
+	all
+
 .PHONY: all clean oclean fclean re
 
 all: ${OBJ}
