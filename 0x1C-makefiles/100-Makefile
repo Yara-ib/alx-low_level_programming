@@ -4,9 +4,10 @@ OBJ = ${SRC:.c=.o}
 NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
+AlT_FLAGS = CFLAGS
 
 all: ${OBJ}
-	${CC} ${CFLAGS} $^ -o ${NAME}
+	${CC} ${AlT_FLAGS} $^ -o ${NAME}
 
 clean:
 	${RM} *~ ${NAME}
